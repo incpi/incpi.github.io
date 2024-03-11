@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+    <nav class="text-white py-4 px-5 md:px-[5%] flex items-center justify-between w-90%">
+        <!-- Logo and Brand Name -->
+        <div class="flex items-center">
+            <img src="https://github.com/incpi.png" alt="Logo" class="h-8">
+            <span class="font-bold text-xl ml-2">Omkar</span>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center space-x-4">
+            <a href="#" class="nav-button active">Home <i class="fas fa-home ml-1"></i></a>
+            <a href="#" class="nav-button">About <i class="fas fa-info-circle ml-1"></i></a>
+            <a href="#" class="nav-button">Services <i class="fas fa-cogs ml-1"></i></a>
+            <a href="#" class="nav-button">Contact <i class="fas fa-envelope ml-1"></i></a>
+        </div>
+    </nav>
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Website</h1>
+            <p>This is the hero section of your website.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-section">
+            <div class="about-image" style="background-image: url('about1.jpg')">
+                <div class="glass-overlay"></div>
+            </div>
+            <div class="about-details">
+                <h2>About Me</h2>
+                <p class="short-bio">Short bio goes here...</p>
+                <p class="long-bio">Longer description goes here...</p>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <div class="glass-overlay"></div>
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill-category">
+                    <h3>Category 1</h3>
+                    <ul>
+                        <li>Sub-point 1</li>
+                        <li>Sub-point 2</li>
+                        <li>Sub-point 3</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Category 2</h3>
+                    <ul>
+                        <li>Sub-point 1</li>
+                        <li>Sub-point 2</li>
+                        <li>Sub-point 3</li>
+                    </ul>
+                </div>
+                <!-- Add more skill categories as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Services Section</h2>
+        <p>This is the content of the Services section.</p>
+        <div class="services">
+            <div class="service-card">
+                <div class="card-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1562873658-15d15ab42c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D')">
+                </div>
+                <div class="card-content">
+                    <h2>Service 1</h2>
+                    <p>Description of service 1</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="card-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1486134030336-39b1094bf33e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D')">
+                </div>
+                <div class="card-content">
+                    <h2>Service 2</h2>
+                    <p>Description of service 2</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="card-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1701014159309-4a8b84faadfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwOXxpVUlzblZ0akIwWXx8ZW58MHx8fHx8')">
+                </div>
+                <div class="card-content">
+                    <h2>Service 3</h2>
+                    <p>Description of service 3</p>
+                </div>
+            </div>
+            <!-- Add more service cards here -->
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
+                    asymmetrical gentrify.</p>
+            </div>
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <form id="contact-form" class="flex flex-wrap -m-2">
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                            <textarea id="message" name="message"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        </div>
+                    </div>
+                    <div class="p-2 w-full">
+                        <button type="submit"
+                            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send
+                            Message</button>
+                    </div>
+                </form>
+                <div id="success-message" class="hidden text-green-500">Your message has been sent successfully!</div>
+                <div id="error-message" class="hidden text-red-500">Oops! Something went wrong. Please try again later.
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+            <div class="disclaimer">
+                <h3>Disclaimer</h3>
+                <p>This is a disclaimer statement.</p>
+            </div>
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="/scripts/main.js"></script>
+
+</html>

@@ -1,0 +1,256 @@
+/* Root variables */
+:root {
+    --bg-color: rgba(255, 255, 255, 0.2);
+    --text-color: white;
+    --hover-color: #00bcd4;
+}
+
+/* Dark theme */
+.dark {
+    --bg-color: rgba(0, 0, 0, 0.2);
+    --text-color: black;
+    --hover-color: #ff9966;
+}
+
+/* Glass effect on navigation buttons */
+.nav-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Keyframes for gradient change */
+@keyframes changeGradient {
+    0% {
+        background: linear-gradient(to right, #ff9966, #ff5e62);
+    }
+
+    100% {
+        background: linear-gradient(to right, #f7ff00, #db36a4);
+    }
+}
+
+body {
+    animation: changeGradient 5s infinite alternate;
+}
+
+/* Sections */
+.section {
+    padding: 50px;
+    margin-top: 20px;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+/* Hero section styles */
+.hero {
+    background-image: url('your-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+/* Footer styles */
+footer {
+    padding: 50px 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-info,
+.disclaimer,
+.social-links {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-info h3,
+.disclaimer h3,
+.social-links h3 {
+    margin-bottom: 10px;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--hover-color);
+}
+
+/* Reset styles */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Service cards */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    background-color: var(--bg-color);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.about-section {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.card-image {
+    position: relative;
+    height: 200px;
+    /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.about-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.about-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.about-details p {
+    font-size: 1em;
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.skills h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li {
+    margin-bottom: 5px;
+}
+
+.skill-category h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skill-category {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.skills h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.skill-category h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    margin-bottom: 5px;
+}
