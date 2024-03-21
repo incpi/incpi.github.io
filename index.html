@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,161 +16,205 @@
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 
-<body>
+<body class="mouse-track">
+    <div id="cookie-consent">
+        <p class="mb-2">This website uses cookies to ensure you get the best experience on our website.</p>
+        <p class="text-sm mb-4">By continuing to use our site, you consent to the use of cookies as described in our <a
+                href="/privacy-policy" class="underline">Privacy Policy</a>.</p>
+        <button onclick="acceptCookies()"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Accept Cookies</button>
+    </div>
+    <canvas id="canvas-complex"></canvas>
     <nav class="text-white py-4 px-5 md:px-[5%] flex items-center justify-between w-90%">
         <!-- Logo and Brand Name -->
         <div class="flex items-center">
-            <img src="https://github.com/incpi.png" alt="Logo" class="h-8">
+            <img src="/assets/me.jpg" alt="Logo" class="h-8">
             <span class="font-bold text-xl ml-2">Omkar</span>
         </div>
 
         <!-- Navigation Buttons -->
         <div class="flex items-center space-x-4">
-            <a href="#" class="nav-button active">Home <i class="fas fa-home ml-1"></i></a>
-            <a href="#" class="nav-button">About <i class="fas fa-info-circle ml-1"></i></a>
-            <a href="#" class="nav-button">Services <i class="fas fa-cogs ml-1"></i></a>
-            <a href="#" class="nav-button">Contact <i class="fas fa-envelope ml-1"></i></a>
+            <a href="#home" class="nav-button active">Home<i class="fas fa-home ml-1"></i></a>
+            <a href="#about" class="nav-button">About<i class="fas fa-info-circle ml-1"></i></a>
+            <a href="#services" class="nav-button">Projects<i class="fas fa-cogs ml-1"></i></a>
+            <a href="#contact" class="nav-button">Contact<i class="fas fa-envelope ml-1"></i></a>
         </div>
     </nav>
-    <section id="home" class="section hero">
-        <div class="hero-content">
-            <h1>Welcome to Your Website</h1>
-            <p>This is the hero section of your website.</p>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="about-section">
-            <div class="about-image" style="background-image: url('about1.jpg')">
-                <div class="glass-overlay"></div>
+    <header id="home" class="hero flex flex-col justify-center items-center text-center py-32"
+        style="background-size: cover; background-repeat: no-repeat;">
+        <svg disabled id="bgground" style="pointer-events: none;position: fixed;width: 100%;height: 100%;"> </svg>
+        <div class="card-content">
+            <h1 class="text-4xl md:text-6xl text-white font-bold mb-4">Omkar Patel</h1>
+            <p class="text-lg md:text-xl text-white mb-8">SAP Cloud Platform Integration (CPI) Developer &amp;
+                consultant
+            </p>
+            <div class="text-white max-w-xl">
+                <p class="mb-4">
+                </p>
+                <p class="text-lg mb-8">Passionate about simplifying business processes through seamless integration.
+                </p>
+                <p></p>
             </div>
+        </div>
+        <div>
+            <a href="#contact"
+                class="inline-block bg-white text-blue-500 font-bold py-3 px-8 m-8 rounded-lg hover:bg-blue-400 hover:text-white transition duration-300">Get
+                in Touch</a>
+            <a href="#project"
+                class="inline-block bg-white text-blue-500 font-bold py-3 px-8 m-8 rounded-lg hover:bg-blue-400 hover:text-white transition duration-300">My
+                projects</a>
+        </div>
+        <div>
+            <a href="https://incpi.github.io/website2021"
+                class="inline-block bg-white text-blue-500 font-bold py-3 px-8 m-8 rounded-lg hover:bg-blue-400 hover:text-white transition duration-300">Go
+                to old website (this is under development)</a>
+        </div>
+    </header>
+
+
+
+    <section id="about">
+        <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4">About Me</h1>
+        </div>
+        <div class="about-section">
+            <div class="about-image" style="background-image: url('/assets/me.jpg')"></div>
             <div class="about-details">
-                <h2>About Me</h2>
-                <p class="short-bio">Short bio goes here...</p>
-                <p class="long-bio">Longer description goes here...</p>
+                <h2>Greetings!</h2>
+                <p class="text-lg md:text-xl text-white mb-8"> I'm Omkar Patel</p>
+                <p class="long-bio">A skilled IT professional with over two years of diverse
+                    experience across various projects. Known for delivering exceptional results and fostering client
+                    satisfaction, I excel in both team and individual settings. My passion for learning and leveraging
+                    new tools drives my goal of enhancing company performance and becoming an IT expert.</p>
             </div>
         </div>
 
         <div class="skills-section">
-            <div class="glass-overlay"></div>
+            <div id="diamondContainer" class="container grid gap-4 md:gap-6 lg:gap-8 justify-center">
+                <!-- Dynamically generated diamond-shaped grid will go here -->
+            </div>
             <div class="skills">
                 <h2>Skills</h2>
                 <div class="skill-category">
-                    <h3>Category 1</h3>
-                    <ul>
-                        <li>Sub-point 1</li>
-                        <li>Sub-point 2</li>
-                        <li>Sub-point 3</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Category 2</h3>
-                    <ul>
-                        <li>Sub-point 1</li>
-                        <li>Sub-point 2</li>
-                        <li>Sub-point 3</li>
-                    </ul>
                 </div>
                 <!-- Add more skill categories as needed -->
             </div>
         </div>
     </section>
 
-    <section id="services" class="section">
-        <h2>Services Section</h2>
-        <p>This is the content of the Services section.</p>
+    <section id="services">
+        <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4">Projects</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+        </div>
         <div class="services">
-            <div class="service-card">
+            <div class="service-card card-content">
                 <div class="card-image"
                     style="background-image: url('https://images.unsplash.com/photo-1562873658-15d15ab42c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D')">
                 </div>
-                <div class="card-content">
-                    <h2>Service 1</h2>
-                    <p>Description of service 1</p>
+                <div>
+                    <h2>SAP CPI Custom Adaptor</h2>
+                    <p>Developed custom SAP CPI adaptor with Java & Maven, tailoring functionalities for seamless
+                        integration.</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card card-content">
                 <div class="card-image"
                     style="background-image: url('https://images.unsplash.com/photo-1486134030336-39b1094bf33e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D')">
                 </div>
-                <div class="card-content">
-                    <h2>Service 2</h2>
-                    <p>Description of service 2</p>
+                <div>
+                    <h2>CPI Helper Extension & Plugin</h2>
+                    <p>Provides SAP CPI performance stats and debugging, improving user interaction with web
+                        technologies.</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card card-content">
                 <div class="card-image"
                     style="background-image: url('https://images.unsplash.com/photo-1701014159309-4a8b84faadfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwOXxpVUlzblZ0akIwWXx8ZW58MHx8fHx8')">
                 </div>
-                <div class="card-content">
-                    <h2>Service 3</h2>
-                    <p>Description of service 3</p>
+                <div class="">
+                    <h2>Python Project</h2>
+                    <p>Discord Bot for YouTube: Built Discord bot for real-time YouTube notifications, enhancing
+                        community engagement through automation.</p>
                 </div>
             </div>
-            <!-- Add more service cards here -->
+            <div class="service-card card-content">
+                <div class="card-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1562873658-15d15ab42c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D')">
+                </div>
+                <div>
+                    <h2>Web Project</h2>
+                    <p>Swift Helper Extension: Developed extension for government teachers, simplifying tasks.</p>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="contact" class="section">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
-                    asymmetrical gentrify.</p>
+    <section id="contact">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+            <div class="lg:w-1/2 md:w-1/2 mb-10 lg:mb-0">
+                <div class="contact-info flex flex-col w-full mb-12">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4">Contacts</h1>
+                    <p class="lg:w-2/3 mr-auto leading-relaxed text-base">Need to get in touch? Either fill out form
+                        with your inquiry or find the Email below, You'd like to contact below.</p>
+                </div>
+                <div class="social-links">
+                    <h2 class="text-lg mb-2">Follow Us</h2>
+                    <ul class="flex">
+                        <li class="my-5 mr-5"><a href="mailto:omk14p@gmail.com" class=" hover:text-gray-800"><i
+                                    class="mr-3 fa fa-envelope"></i>Email</a></li>
+                        <li class="m-5"><a href="https://github.com/incpi"><i class="mr-3 fab fa-github"></i>github</a>
+                        </li>
+                        <li class="my-5 ml-5"><a href="#"><i class="mr-3 fab fa-linkedin-in"></i>linkedin</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <form id="contact-form" class="flex flex-wrap -m-2">
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+            <div class="lg:w-1/2 md:w-1/2 mb-10 lg:mb-0">
+                <div class="card-content rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 shadow-md">
+                    <form id="contact-form" class="flex flex-wrap -m-2">
+                        <div class="p-2 w-full">
+                            <label for="name" class="leading-7 text-sm">Name</label>
                             <input type="text" id="name" name="name"
                                 class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                         </div>
-                    </div>
-                    <div class="p-2 w-1/2">
-                        <div class="relative">
-                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                        <div class="p-2 w-full">
+                            <label for="email" class="leading-7 text-sm">Email</label>
                             <input type="email" id="email" name="email"
                                 class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                         </div>
-                    </div>
-                    <div class="p-2 w-full">
-                        <div class="relative">
-                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                        <div class="p-2 w-full">
+                            <label for="message" class="leading-7 text-sm">Message</label>
                             <textarea id="message" name="message"
                                 class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                         </div>
-                    </div>
-                    <div class="p-2 w-full">
-                        <button type="submit"
-                            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send
-                            Message</button>
-                    </div>
-                </form>
-                <div id="success-message" class="hidden text-green-500">Your message has been sent successfully!</div>
-                <div id="error-message" class="hidden text-red-500">Oops! Something went wrong. Please try again later.
+                        <div class="p-2 w-full">
+                            <button type="submit"
+                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send
+                                Message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </section>
     <footer>
         <div class="footer-content">
             <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Email: info@example.com</p>
-                <p>Phone: +1234567890</p>
+                <h2>&copy; All right reserved.</h2>
             </div>
             <div class="disclaimer">
-                <h3>Disclaimer</h3>
-                <p>This is a disclaimer statement.</p>
+                <h3></h3>
+                <p></p>
             </div>
             <div class="social-links">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <h3>Contact me</h3>
+                <ul class="flex justify-center">
+                    <li class="mr-3"><a href="mailto:omk14p@gmail.com" class=" hover:text-gray-800"><i
+                                class="fa fa-envelope"></i></a></li>
+                    <li class="mr-3"><a href="https://github.com/incpi" class=" hover:text-gray-800"><i
+                                class="fab fa-github"></i></a></li>
+                    <li class="mr-3"><a href="#" class=" hover:text-gray-800"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" class=" hover:text-gray-800"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
