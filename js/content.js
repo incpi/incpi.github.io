@@ -1,5 +1,3 @@
-
-
 function init_id() {
     document.body.innerHTML = `<nav class="flex"></nav>
     <div id="loader">
