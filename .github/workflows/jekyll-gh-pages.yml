@@ -20,9 +20,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-  
-env:
-    API_KEY: ${{ secrets.US_r }}
     
 jobs:
   # Build job
@@ -52,3 +49,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.US_r }}
+          publish_dir: ./public
