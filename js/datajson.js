@@ -68,3 +68,5 @@ const contacts = [
         "link": "https://www.linkedin.com/in/omiswave/"
     }
 ]
+const apiKey = process.env.API_KEY
+console.log(apiKey)
